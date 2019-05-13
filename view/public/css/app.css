@@ -1,0 +1,265 @@
+body{
+    color:rgb(100,100,100);
+}
+::-webkit-scrollbar {
+    width: 5px;
+}
+::-webkit-scrollbar-thumb {
+    background:rgba(121, 121, 121, 0.418);
+    border-radius: 5px;
+}
+b{
+    font-size:20px;
+}
+a{
+    color: rgb(0, 20, 107) !important;
+    cursor:pointer;
+}
+a:hover{
+    text-decoration:none;
+}
+li{
+    list-style: none;
+}
+.login{
+    margin-top: 100px;
+    padding:30px;
+    border: 1px solid rgb(204, 204, 204);
+    border-radius:20px;
+    background:white;
+}
+.login p{
+    font-size: 22px;
+}
+.menu, .perfil{
+    position:fixed;
+    float:left;
+}
+.menu{
+    top:150px;
+}
+.perfil{
+    padding:0;
+}
+.perfil #letraNome{
+    color:rgb(0, 20, 107);
+    background:rgb(227, 234, 255);
+    padding:20px 0;
+    font-size:50px;
+}
+.perfil a{
+    font-size:14px;
+}
+.menu{
+    margin-top:50px;
+    padding:0;
+}
+.menu ul{
+    padding:0;
+}
+.menu li{
+    height:80px;
+    line-height: 100px;
+    text-align: center;
+    cursor:pointer;
+}
+.menu li a{
+    height:100%;
+    width:100%;
+}
+.menu li span{
+    font-size:38px;
+}
+#menu-home, #menu-hist, #menu-dinheiro, #menu-obj, #menu-familia{
+    transition: background .2s;
+}
+#menu-home a, #menu-contas a, #menu-hist a, #menu-dinheiro a, #menu-obj a, #menu-familia a{
+    transition: color .2s;
+}
+#menu-home a, #menu-contas a, #menu-dinheiro a, #menu-obj a, #menu-hist a, #menu-familia a {
+    color:rgb(217, 223, 241) !important;
+}
+#menu-home a:hover {
+    color:rgb(0, 31, 172) !important;
+}
+#menu-home:hover{
+    background:rgb(128, 151, 255);
+}
+#menu-contas a:hover{
+    color:rgb(146, 66, 0) !important;
+}
+#menu-contas:hover {
+    background:rgb(255, 148, 86);
+}
+#menu-dinheiro a:hover{
+    color:rgb(0, 185, 15) !important;
+}
+#menu-dinheiro:hover{
+    background:rgb(118, 255, 130);
+}
+#menu-obj a:hover{
+    color:rgb(156, 154, 0) !important;
+}
+#menu-obj:hover{
+    background:rgb(253, 255, 122);
+}
+#menu-hist a:hover{
+    color:rgb(0, 0, 0) !important;
+}
+#menu-hist:hover{
+    background:rgb(167, 167, 167);
+}
+#menu-familia a:hover {
+    color:rgb(175, 0, 0) !important;
+}
+#menu-familia:hover{
+    background:rgb(255, 110, 110);
+}
+#page{
+    opacity:0;
+    transition: opacity 1s;
+    padding-top:12px;
+}
+.aumentaOnOver:hover{
+    font-size:16px !important;
+}
+.dash .saldo small,
+.dash .contas small{
+    font-size:10px;
+}
+.dash .saldo h2 small,
+.dash .contas h2 small{
+    font-size: 16px;
+}
+.heightDashSaldoConta {
+    height:138px !important;
+    max-height:138px;
+}
+.saldo, .contas{
+    border-radius: 10px;
+    padding:10px 20px;
+    margin-bottom:40px;
+}
+.saldo{
+    background:rgb(112, 150, 255);
+    color:rgb(255, 255, 255);
+}
+.saldo:hover{
+    cursor:pointer;
+}
+.contas{
+    background:rgb(255, 38, 38);
+    color:rgb(255, 255, 255);
+}
+.contas-pagas {
+    background:rgb(7, 212, 58) !important;
+}
+.contas-total {
+    background:rgb(230, 92, 13);
+}
+#dinheiro{
+    margin-top:20px;
+}
+#lblFiltroData{
+    line-height: 40px;
+}
+.spanVerde{
+    color:green;
+}
+.spanVermelho{
+    color:red;
+}
+.spanVermelho:hover{
+    cursor:pointer;
+    font-weight: bolder;
+    font-size: 18px;
+}
+.nadaEncontrado{
+    margin-top:100px;
+}
+.historicoBlock{
+    border-left:1px solid rgba(0,0,0,.2);
+    min-height:250px;
+    margin-top:50px;
+    font-size: 20px;
+}
+.historicoBlock span{
+    z-index:5;
+}
+.historicoBlock .evento{
+    position: relative;
+    left:-25px;
+    margin:20px 0;
+}
+.historicoBlock .evento .desc{
+    font-size:inherit;
+}
+.historicoBlock .evento .dt{
+    font-size:12px;
+}
+#profile-view #conteudo{
+    margin-top:50px;
+}
+#profile-view #conteudo .row{
+    margin:10px 0;
+}
+#profile-view h3 a{
+    font-size:18px !important;
+}
+#profile-view #conteudo small{
+    color:rgba(0,0,0,.4);
+}
+#profile-view #conteudo form{
+    margin-bottom:50px;
+}
+.modal-body form .row{
+    margin:5px 0px !important;
+}
+.modal-body form p span{
+    color:red !important;
+    font-weight:bolder;
+}
+#profile-view #conteudo form label,
+#profile-view #conteudo form span{
+    line-height: 35px;
+}
+#profile-view #conteudo table,
+#btnPrimeiroDesconto,
+#btnPrimeiroBeneficio{
+    margin-bottom:80px;
+}
+#nome_salvar_beneficio,
+#nome_salvar_desconto,
+#nome_editar_beneficio,
+#nome_editar_desconto,
+#dt_salvar_beneficio,
+#dt_editar_beneficio{
+    visibility: hidden;
+}
+.extraSpace{
+    margin:80px 0px !important;
+}
+.bigInput{
+    height:200px !important;
+}
+.hdoisTitle{
+    margin:20px 0;
+}
+.btn-link{
+    border: 1px solid;
+    border-color:rgb(112, 150, 255);
+    border-radius:5px;
+    background:rgba(0,0,0,0);
+    color: rgb(112, 150, 255) !important;
+    cursor:pointer;
+    padding:8px;
+    transition: color .2s, background .2s;
+}
+.btn-link:hover{
+    text-decoration:none;
+    color: white !important;
+    background:rgb(112, 150, 255);
+}
+.pointerSpan:hover {
+    cursor:not-allowed;
+}
