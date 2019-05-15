@@ -70,6 +70,9 @@
             return parent::save($obj);
         }
 
+        public function getByIdNameLoginOrEmail($text) {
+            return $this->dePara(parent::getDao()->getByIdNameLoginOrEmail($text));
+        }
         
     }
 ?>

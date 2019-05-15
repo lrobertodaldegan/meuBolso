@@ -198,8 +198,8 @@
             return parent::getDao()->deleteParentAndChildren($idPai);
         }
 
-        public function pagar($idConta, $isPago) {
-            return parent::getDao()->pagar($idConta, $isPago); 
+        public function pagar($idConta, $isPago, $saldo, $atualizadorId) {
+            return parent::getDao()->pagar($idConta, $isPago, $saldo, $atualizadorId); 
         }
 
         public function get($id){
