@@ -150,6 +150,28 @@ function updateSaldo(form, event, urld){
     });
 }
 
+function contribuir(idForm, evento, urld) {
+    evento.preventDefault();
+
+    var form = $(idForm);
+
+    $.ajax({
+        type:"get",
+        data:form.serialize(),
+        url:urld,
+        success: function(r){
+            console.log(r);
+
+            load('compartilhado/');
+        },
+        error: function(e){
+            console.log("Erro: " + e);
+        }
+    });
+
+    resetarForm(idForm);
+}
+
 function save(idForm, evento, urld){
     evento.preventDefault();
 
@@ -328,17 +350,110 @@ function setConta(objType, inputVal, isShared) {
                         $('#edit_id_tipo').append("<option value='"+ r.tipo.id +"' selected>"+ r.tipo.nome + "</option>");
                 }
             } else {//contribuir compartilhado
-                $('#id').val(r.id_usuario);
+                $('#id').val(r.id);
 
-                if(typeof r.saldo != 'undefined' && r.saldo > 0 && r.saldo != r.valor)
+                if(typeof r.saldo != 'undefined' && r.saldo > 0 && r.saldo != r.valor) {
                     $('#saldo').val(r.saldo);
-                else
+                    $('#saldo_original').val(r.saldo);
+                    $('#valor').val(r.valor);
+                } else {
+                    $('#valor').val(r.valor);
                     $('#saldo').val(r.valor);
+                    $('#saldo_original').val(0);
+                }
+
+                if($('#saldo').val() >= $('#saldo_original').val())
+                    $('#btnSalvarConta').prop('disabled', false);
+                else
+                    $('#btnSalvarConta').prop('disabled', true);
             }
         },
         error: function(e){
             console.log(e);
         }
+    });
+}
+
+function setSharedUser(input, targetId, addTargetId) {
+    $.ajax({
+        action:"get",
+        data:{
+            "id":$(input).val(),
+            "obj":'usuario'
+        },
+        url:"buscar.php",
+        success: function(r){
+            if(r != null && r != 'undefined' && r != '') {
+                r = JSON.parse(r);
+
+                $(targetId).val(r.id);
+                $(addTargetId).val(r.nome);
+                $(addTargetId).prop('disabled', true);
+            }
+        },
+        error: function(e){
+            console.log(e);
+        }
+    });
+}
+
+function setCompartilhar(objType, inputVal) {
+    $('#id_conta').val(inputVal);
+
+    loadSharedTable(inputVal);
+}
+
+function compartilhar(idForm, event, urlD) {
+    event.preventDefault();
+
+    var form = $(idForm);
+
+    $.ajax({
+        type:"get",
+        data:form.serialize(),
+        url:urlD,
+        success: function(r){
+            console.log(r);
+
+            loadSharedTable(r);
+        },
+        error: function(e){
+            console.log("Erro: " + e);
+        }
+    });
+
+    resetarForm(idForm);
+}
+
+function unShare(id) {
+    $.ajax({
+        type:"get",
+        data:{
+            "id":id
+        },
+        url:"conta/unShare.php",
+        success: function(r){
+            console.log(r);
+
+            loadSharedTable(r);
+        },
+        error: function(e){
+            console.log("Erro: " + e);
+        }
+    });
+}
+
+function loadSharedTable(idConta) {
+    $.ajax({
+        action:"get",
+        data:{
+            "id_conta":idConta,
+        },
+        url:"conta/modal/compartilhadoTable.php",
+        success: function(r){
+            $('#listCompartilhado').html(r);
+        },
+        error:function(e){}
     });
 }
 
