@@ -1,6 +1,6 @@
 <?php
     require_once "Service.php";
-    require_once $_SERVER['DOCUMENT_ROOT'] ."/meuBolso/dao/ObjetivoDao.php";
+    require_once $_SERVER['DOCUMENT_ROOT'] ."/meuBolso/dao/ObjetivoDAO.php";
     require_once $_SERVER['DOCUMENT_ROOT'] ."/meuBolso/controller/UsuarioController.php";
 
     class ObjetivoService extends Service{
