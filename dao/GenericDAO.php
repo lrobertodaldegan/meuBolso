@@ -23,7 +23,14 @@
         public function getAllByUser($uId) {
             $c = $this->connect();
 
-            return $c != null ? $c->query("SELECT * FROM ". $this->getTable() ." WHERE id_usuario = ". $uId)->fetchAll(PDO::FETCH_OBJ) : null;
+            if($c != null){
+                $q = $c->query("SELECT * FROM ". $this->getTable() ." WHERE id_usuario = ". $uId);
+
+                if($q->execute() && $q->rowcount() > 0)
+                    return $q->fetchAll(PDO::FETCH_OBJ);
+            }
+
+            return null;
         }
 
         public function get($id){

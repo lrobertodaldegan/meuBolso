@@ -133,12 +133,11 @@
             return false;
         }
 
-        public function pagar($cId, $isPago) {
+        public function pagar($cId, $isPago, $saldo, $atualizadorId) {
             $c = $this->connect();
 
             if($c != null){
-                $sql = "UPDATE ". $this->getTable() ." SET pago = ". $isPago;
-
+                $sql = "UPDATE ". $this->getTable() ." SET pago = ". $isPago .", saldo = '". $saldo ."', atualizado_por = ". $atualizadorId;
                 $sql .= ' WHERE id = '. $cId;
 
                 $q = $c->prepare($sql);
