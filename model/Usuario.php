@@ -64,6 +64,17 @@
             ;
         }
 
+        public function toJSON() {
+            return json_encode([
+                "id" => Util::getNULLorId($this),
+                "nome" => $this->getNome(),
+                "login" => $this->getLogin(),
+                "email" => $this->getEmail(),
+                "saldo" => $this->getSaldo(),
+                "renda" => $this->getRenda()
+            ]);
+        }
+
         public function getId(){
             return $this->id;
         }
