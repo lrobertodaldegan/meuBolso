@@ -31,7 +31,7 @@
                 $retorno = $bController->get($_GET['id']);
                 break;
             case USUARIO:
-                $retorno = $uController->get($_GET['id']);
+                $retorno = $uController->getByIdNameLoginOrEmail($_GET['id']);
                 break;
             case DESCONTO:
                 $retorno = $dController->get($_GET['id']);
@@ -53,6 +53,8 @@
         }
     }
 
-    echo $retorno->toJSON();
+    if(!empty($retorno))
+        echo $retorno->toJSON();
+    
     die();
 ?>
