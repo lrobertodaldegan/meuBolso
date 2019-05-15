@@ -10,6 +10,8 @@
             <div class="modal-body">
                 <form id="formContribuir" action="compartilhado/contrib.php">
                     <input type="hidden" name="atualizado_por" value="<?php echo $usuario->getId(); ?>"/>
+                    <input type="hidden" id="saldo_original" name="saldo_original"/>
+                    <input type="hidden" id="valor" name="valor"/>
                     <input type="hidden" id="id" name="id"/>
                         <div class="offset-md-3 col-md-7 left">
                             <div class="input-group">
@@ -32,3 +34,9 @@
         </div>
     </div>
 </div>
+<script>
+    $('#saldo').on('change', function(){
+        if($('#saldo').val() >= $('#saldo_original').val())
+            $('#btnSalvarConta').prop('disabled', false);
+    });
+</script>
