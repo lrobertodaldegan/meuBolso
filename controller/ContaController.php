@@ -258,6 +258,11 @@
             if(empty($request) || empty($request['id']) || empty($request['valor']) || empty($request['atualizado_por']))
                 return null;
 
+            if(isset($request['saldo_original']) && !empty($request['saldo_original'])){
+                if($request['saldo'] < $request['saldo_original'])
+                    return false;
+            }
+
             if(empty($request['saldo']))
                 $request['saldo'] = $request['valor'];
 
@@ -269,10 +274,15 @@
                 $request['saldo'] = $request['saldo'] - $diff;
             }
 
-            if($diff == 0) // saldo(conta) igual ao valor da conta 
-                $request['concluido'] = true;
+            $diff = $request['valor'] - $request['saldo'];
 
-            return parent::getService()->pagar($request['id'], $request['concluido'], $request['saldo'], $request['atualizado_por']);
+            $concluido = 0;
+
+            if($diff == 0) // saldo(conta) igual ao valor da conta 
+                $concluido = 1;
+
+            return parent::getService()->pagar($request['id'], $concluido, $request['saldo'], $request['atualizado_por']);
+            //saldo do usuário atualizado é atualizado por trigger
         }
 
         public function getCategoriasPorContasMes($date, $uId) {
