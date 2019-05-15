@@ -93,6 +93,9 @@
                             <?php endif; ?>
                         </td>
                         <td scope="row">
+                            <a href="#contas" title="Compartilhar" data-toggle="modal" data-target="#modalCompartilhar" onClick="setCompartilhar('conta','<?php echo $c->getId(); ?>');" class="aumentaOnOver">
+                                <span class="lnr lnr-location"></span>
+                            </a>
                             <?php if(!$c->isPago() && empty($c->getIdPai())) : ?>
                                 <a href="#contas" title="Editar" data-toggle="modal" data-target="#modalEditarConta" onClick="setConta('conta','<?php echo $c->getId(); ?>', false);" class="aumentaOnOver">
                                     <span class="lnr lnr-pencil"></span>

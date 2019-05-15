@@ -11,6 +11,7 @@
                 <form id="formEditConta" action="dinheiro/upd.php">
                     <input type="hidden" name="id" id="edit_id_conta"/>
                     <input type="hidden" name="id_pai" id="edit_id_pai"/>
+                    <input type="hidden" name="atualizado_por" value="<?php echo $usuario->getId(); ?>"/>
                     <input type="hidden" name="id_usuario" value="<?php echo $usuario->getId(); ?>"/>
                     <div class="row">
                         <div class="col-md-5 text-left">

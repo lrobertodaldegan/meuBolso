@@ -78,7 +78,6 @@
                     <?php else : ?>
                         <tr class="text-center">
                     <?php endif; ?>
-
                         <td scope="row"><?php echo $c->getDescricao(); ?></td>
                         <td scope="row">
                             <?php echo Util::getReais($c->getValor()); ?>
@@ -125,6 +124,9 @@
                             <?php endif; ?>
                         </td>
                         <td scope="row">
+                            <a href="#contas" title="Compartilhar" data-toggle="modal" data-target="#modalCompartilhar" onClick="setCompartilhar('conta','<?php echo $c->getId(); ?>');" class="aumentaOnOver">
+                                <span class="lnr lnr-location"></span>
+                            </a>
                             <?php if(!$c->isPago() && empty($c->getIdPai())) : ?>
                                 <a href="#contas" title="Editar" data-toggle="modal" data-target="#modalEditarConta" onClick="setConta('conta','<?php echo $c->getId(); ?>', false);" class="aumentaOnOver">
                                     <span class="lnr lnr-pencil"></span>
@@ -175,5 +177,6 @@
         require_once "modal/editar.php";
         require_once "modal/excluir.php";
         require_once "modal/updateSaldo.php";
+        require_once "modal/compartilhar.php";
     ?>
 </div>
