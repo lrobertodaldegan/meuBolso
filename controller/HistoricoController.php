@@ -1,7 +1,7 @@
 <?php
     require_once "Controller.php";
     require_once $_SERVER['DOCUMENT_ROOT'] ."/meuBolso/service/HistoricoService.php";
-    require_once $_SERVER['DOCUMENT_ROOT'] ."/meuBolso/Controller/UsuarioController.php";
+    require_once $_SERVER['DOCUMENT_ROOT'] ."/meuBolso/controller/UsuarioController.php";
     require_once $_SERVER['DOCUMENT_ROOT'] ."/meuBolso/model/Historico.php";
 
     class HistoricoController extends Controller{
