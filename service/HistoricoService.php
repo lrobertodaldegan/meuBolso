@@ -1,7 +1,7 @@
 <?php
     require_once "Service.php";
     require_once $_SERVER['DOCUMENT_ROOT'] ."/meuBolso/controller/UsuarioController.php";
-    require_once $_SERVER['DOCUMENT_ROOT'] ."/meuBolso/dao/HistoricoDao.php";
+    require_once $_SERVER['DOCUMENT_ROOT'] ."/meuBolso/dao/HistoricoDAO.php";
 
     class HistoricoService extends Service{
         function __construct(){
