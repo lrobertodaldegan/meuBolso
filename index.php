@@ -94,10 +94,10 @@
                                 <label for="nome">Nome:</label>
                                 <input type="text" class="form-control" name="nome" id="nome" placeholder="Seu nome aqui" required>
                             </div>
-                            <div class="form-group">
+                            <!--<div class="form-group">
                                 <label for="apelido">(Opcional) Quero ser chamado de:</label>
                                 <input type="text" class="form-control" name="apelido" id="apelido" placeholder="Com quer ser chamado?">
-                            </div>
+                            </div> -->
                             <div class="form-group">
                                 <label for="login">Login:</label>
                                 <input type="text" class="form-control" name="login" id="login_" placeholder="Seu novo login aqui" required>
@@ -110,15 +110,17 @@
                                 <label for="email">(Opcional) E-mail:</label>
                                 <input type="text" class="form-control" name="email" id="email" placeholder="Seu e-mail aqui">
                             </div>
-                            <div class="form-group">
+                            <!--<div class="form-group">
                                 <input type="checkbox" name="lembrarLogin" id="lembrarLogin_">
                                 <label for="lembrarLogin"></label><span>Lembre meus dados no próximo login</span></label>
-                            </div>
+                            </div> -->
                             <hr>
-                            <button type="submit" class="btn btn-primary">
-                                <span class="lnr lnr-checkmark-circle"></span>
-                                Salvar e Continuar
-                            </button>
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-primary">
+                                    <span class="lnr lnr-checkmark-circle"></span>
+                                    Salvar e Continuar
+                                </button>
+                            </div>
                         </form>
                     </div>
                 </div>
