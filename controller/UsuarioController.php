@@ -218,15 +218,31 @@
         }
 
         public function save($req){
+            if(empty($req[ParametrosEnum::SENHA]) || empty($req[ParametrosEnum::LOGIN]))
+                return false;
+
             $u = new Usuario();
 
-            $u->setId($req['id']);
-            $u->setNome($req[ParametrosEnum::NOME]);
-            $u->setApelido($req[ParametrosEnum::APELIDO]);
-            $u->setLogin($req[ParametrosEnum::LOGIN]);
-            $u->setSenha($req[ParametrosEnum::SENHA], true);
-            $u->setRenda($req['usuario_renda']);
-            $u->setDataPagamento($req['dataPagamento']);
+            if(isset($req['id']))
+                $u->setId($req['id']);
+
+            if(isset($req[ParametrosEnum::NOME]))
+                $u->setNome($req[ParametrosEnum::NOME]);
+
+            if(isset($req[ParametrosEnum::APELIDO]))
+                $u->setApelido($req[ParametrosEnum::APELIDO]);
+
+            if(isset($req[ParametrosEnum::LOGIN]))
+                $u->setLogin($req[ParametrosEnum::LOGIN]);
+
+            if(isset($req[ParametrosEnum::SENHA]))
+                $u->setSenha($req[ParametrosEnum::SENHA], true);
+
+            if(isset($req['usuario_renda']))
+                $u->setRenda($req['usuario_renda']);
+
+            if(isset($req['dataPagamento']))
+                $u->setDataPagamento($req['dataPagamento']);
 
             if(isset($req['saldo']))
                 $u->setSaldo($req['saldo']);
