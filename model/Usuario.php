@@ -58,7 +58,7 @@
                 ."'". $this->getEmail() ."', "
                 ."'". $this->getApelido() ."', "
                 ."'". $this->getSenha() ."', "
-                . $this->getRenda() .", "
+                ."'". $this->getRenda() ."', "
                 ."'". $this->getDataPagamento() ."', "
                 ."'". $this->getSaldo() ."'"
             ;
