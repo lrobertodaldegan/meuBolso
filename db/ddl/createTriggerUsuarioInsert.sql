@@ -16,6 +16,7 @@ FOR EACH ROW
         'usuario.id',
         NEW.id,
         NULL,
-        NEW.id
+        NEW.id,
+        NOW()
     )
 ;
